@@ -43,18 +43,18 @@ public:
     template<typename T> void send(T sent, int tam)
     {
         int cont=0;
-        while(cont<=tam){
+        while(cont<=tam+1){
             
             unsigned long currentMillis = millis();
         
             if(currentMillis-previousMillis1>t){
-                if(cont==0){
+                if(cont<2){
                     digitalWrite(pinOut,1);
                     cont++;  
                 }
                 else{
-                    digitalWrite(pinOut,bitRead(sent,cont-1));
-                    Serial.print(bitRead(sent,cont-1));
+                    digitalWrite(pinOut,bitRead(sent,cont-2));
+                    Serial.print(bitRead(sent,cont-2));
                     cont++;
                 }
                 
@@ -72,14 +72,14 @@ public:
         //unsigned long currentMillis = millis();
         int i;
         if(digitalRead(pinIn)==0){
-            delay(t);
+            delay(3*t);
             Serial.print("\n");
             for( i=0;i<tam;i++){
                     bitWrite(received,i,!digitalRead(pinIn));
                     Serial.print(!digitalRead(pinIn));
                     delay(t);
             }
-            
+
             Serial.println("Value at i : ");
             Serial.print((T)received);
             Serial.print("\n Value at i in binari : ");
