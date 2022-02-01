@@ -24,7 +24,7 @@ void loop(){
   for ( i = 0; i < 1000; i++)
   {
     laser.send(i,tam*8);
-    delay(2000);
+    delay(1000);
   }*/
   
 
