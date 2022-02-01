@@ -3,7 +3,7 @@
 
 
 
-LaSend is an arduino(And other microcontrollers) library very easy to use for data transmission through laser technology. 
+LaSend is an arduino(and other microcontrollers) library very easy to use for data transmission through laser technology. 
 
 - Send and recive all kind of data . 
 - Easy to use
